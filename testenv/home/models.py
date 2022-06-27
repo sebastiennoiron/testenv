@@ -19,11 +19,11 @@ class CustomUser(AbstractUser):
     PROJECTMANAGER = 'PMG'
 
     USER_TYPES = (
-        (0,FARMER, 'base farmer'),
-        (1,SALESMAN, 'salesman'),
-        (2,TECHSUPPORT, 'tech support'),
-        (3,REGIONALMANAGER, 'regional manager'),
-        (4,PROJECTMANAGER, 'project manager')
+        (FARMER, 'base farmer'),
+        (SALESMAN, 'salesman'),
+        (TECHSUPPORT, 'tech support'),
+        (REGIONALMANAGER, 'regional manager'),
+        (PROJECTMANAGER, 'project manager')
     )
 
     REQUIRED_FIELDS = ['role']
@@ -42,8 +42,8 @@ class CustomUser(AbstractUser):
                     userlist.extend(_userlist)
             return userlist
     
-    def is_higher(self,include_self=True):
-        pass
+    # def is_higher(self,include_self=True):
+    #     pass
 
 
     def __str__(self):
